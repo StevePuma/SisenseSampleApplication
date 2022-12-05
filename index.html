@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>CUSTOMER Dashboard Example</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      body {
+    margin: 0;
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.5385;
+    color: #333;
+    text-align: left;
+    background-color: #f5f5f5;
+}
+
+.mt-100{
+    margin-top:0px;
+    margin-bottom:10px;
+}
+
+                                    .book {
+                                                 color: #66bb6a;
+                                     }
+
+
+                                     .bg-success-400 {
+    background-color: #66bb6a;
+}
+
+[class*=bg-]:not(.bg-transparent):not(.bg-light):not(.bg-white):not(.btn-outline):not(body) {
+    color: #fff;
+}
+
+.btn {
+    position: relative;
+}
+
+
+.border-warning-400 {
+    border-color: #ff7043;
+}
+
+.support{
+color: #ff7043;;
+}
+
+
+.support-button {
+    background-color: #ff7043;
+    color:#fff;
+}
+
+.support-button:hover {
+    background-color: #ff7043;
+    color:#fff;
+}
+
+.newspaper{
+color: #03a9f4; 
+} 
+
+.newspaper-button{
+    background-color: #03a9f4;
+    color:#fff;
+
+}
+.newspaper-button:hover{
+    background-color: #03a9f4;
+    color:#fff;
+
+}
+body{margin: 0;font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size: .88rem;font-weight: 400;line-height: 1.5;color: #495057;text-align: left;background-color: #eef1f3}.mt-100{margin-top:10px}.card{box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,0.03), 0 0.9375rem 1.40625rem rgba(4,9,20,0.03), 0 0.25rem 0.53125rem rgba(4,9,20,0.05), 0 0.125rem 0.1875rem rgba(4,9,20,0.03);border-width: 0;transition: all .2s}.card-header:first-child{border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0}.card-header{display: flex;align-items: center;border-bottom-width: 1px;padding-top: 0;padding-bottom: 0;padding-right: .625rem;height: 3.5rem;background-color: #fff;border-bottom: 1px solid rgba(26,54,126,0.125)}.card-body{flex: 1 1 auto;padding: 1.25rem}.flex-truncate{min-width: 0 !important}.d-block{display: block !important}a{color: #E91E63;text-decoration: none !important;background-color: transparent}.media img{width: 40px;height: auto}
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow">
+  <div class="col-md-3 col-lg-2 me-0 px-3" href="#"><div class="py-3"><img width="120px" src="" /></div></div>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a style="color: #3499CD;" class="nav-link active" aria-current="page" href="sisensepoc.com/branding/dashboard/index.html">
+              <span data-feather="home"></span>
+              Application Overview
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sisensepoc.com/branding/dashboard/filter_iframe.html">
+              <span data-feather="alert-circle"></span>
+              Insights
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sisensepoc.com/branding/dashboard/custom_embed.html">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <span data-feather="file-text"></span>
+              Custom View
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Account Overview</h1>
+      </div>
+      
+    <div class="container-fluid d-flex justify-content-center mt-100">
+                
+
+            
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fa fa-book fa-5x mb-3 mt-1 book"></i>
+                                <h5 class="card-title">Knowledge Base</h5>  
+                                <p class="mb-3">Contains basic troubleshooting tips (password resets, Administrative tasks like changing the SysAdmin, initial dashboard troubleshooting).For otherchallenges please visit our support site.</p>
+                                <a href="https://support.sisense.com/kb/en" target="_blank" class="btn bg-success-400" data-abc="true">Browse articles</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fa fa-support fa-5x mb-3 mt-1 support"></i>
+                                <h5 class="card-title">Support center</h5>
+                                <p class="mb-3">Our dedicated Customer Success Team works round the clock to delight our global customer base and ensure each customer’s journey from onboarding to live dashboards is seamless.</p>
+                                <a href="https://www.sisense.com/support/" target="_blank" class="btn support-button" data-abc="true">Open a ticket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fa fa-newspaper-o fa-5x mb-3 mt-1 newspaper"></i>
+                                <h5 class="card-title">Articles and news</h5>
+                                <p class="mb-3">Since October 2021, the Sisense Community team has been hard at work building out a space for Sisense Community members to collaborate and exchange ideas. Sign up today!</p>
+                                <a href="https://community.sisense.com/t5/community-blogs/ct-p/blogs" target="_blank" class="btn newspaper-button" data-abc="true">Browse articles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+<div class="container-fluid mt-100">
+     <div class="row">
+         <div class="col-md-12">
+             <div class="card mb-3">
+                 <div class="card-header pr-0 pl-0">
+                     <div class="row no-gutters align-items-center w-100">
+                         <div class="col font-weight-bold pl-3">General</div>
+                         <div class="d-none d-md-block col-6 text-muted">
+                             <div class="row no-gutters align-items-center">
+                                 <div class="col-3">Threads</div>
+                                 <div class="col-3">Replies</div>
+                                 <div class="col-6">Last update</div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="card-body py-3">
+                     <div class="row no-gutters align-items-center">
+                         <div class="col"><a href="javascript:void(0)" class="text-big font-weight-semibold" data-abc="true">Status on the latest sprint cycle</a></div>
+                         <div class="d-none d-md-block col-6">
+                             <div class="row no-gutters align-items-center">
+                                 <div class="col-3">120</div>
+                                 <div class="col-3">14</div>
+                                 <div class="media col-6 align-items-center"> <img src="https://i.imgur.com/Ur43esv.jpg" alt="" class="d-block ui-w-30 rounded-circle">
+                                     <div class="media-body flex-truncate ml-2"> <a href="javascript:void(0)" class="d-block text-truncate" data-abc="true">Thankyou for your help. appreciate your solution</a>
+                                         <div class="text-muted small text-truncate">2d ago &nbsp;&middot;&nbsp; <a href="javascript:void(0)" class="text-muted" data-abc="true">William Smith</a></div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <hr class="m-0">
+                 <div class="card-body py-3">
+                     <div class="row no-gutters align-items-center">
+                         <div class="col"><a href="javascript:void(0)" class="text-big font-weight-semibold" data-abc="true">Announcements</a></div>
+                         <div class="d-none d-md-block col-6">
+                             <div class="row no-gutters align-items-center">
+                                 <div class="col-3">23</div>
+                                 <div class="col-3">12</div>
+                                 <div class="media col-6 align-items-center"> <img src="https://i.imgur.com/J6l19aF.jpg" alt="" class="d-block ui-w-30 rounded-circle">
+                                     <div class="media-body flex-truncate ml-2"> <a href="javascript:void(0)" class="d-block text-truncate" data-abc="true">We have created a new feature for developers and designers</a>
+                                         <div class="text-muted small text-truncate">1d ago &nbsp;&middot;&nbsp; <a href="javascript:void(0)" class="text-muted" data-abc="true">Rodie Angel</a></div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <hr class="m-0">
+                 <div class="card-body py-3">
+                     <div class="row no-gutters align-items-center">
+                         <div class="col"><a href="javascript:void(0)" class="text-big font-weight-semibold" data-abc="true">Guides</a></div>
+                         <div class="d-none d-md-block col-6">
+                             <div class="row no-gutters align-items-center">
+                                 <div class="col-3">42</div>
+                                 <div class="col-3">654</div>
+                                 <div class="media col-6 align-items-center"> <img src="https://i.imgur.com/8RKXAIV.jpg" alt="" class="d-block ui-w-30 rounded-circle">
+                                     <div class="media-body flex-truncate ml-2"> <a href="javascript:void(0)" class="d-block text-truncate" data-abc="true">To enable new notifications. just go to settings.</a>
+                                         <div class="text-muted small text-truncate">1d ago &nbsp;&middot;&nbsp; <a href="javascript:void(0)" class="text-muted" data-abc="true">Kim Nicolas </a></div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <script src="bootstrap.bundle.min.js"></script>
+                                   <div class= "container-fluid mt-100">
+<iframe width="100%" height="450px" position:"right" frameborder="0" src="SISENSE EMBED URL"></iframe>
+      </div>
+    </main>
+  </div>
+</div>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+  </body>
+</html>

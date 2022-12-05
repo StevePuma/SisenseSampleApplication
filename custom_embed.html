@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>CUSTOMER Dashboard Example</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow">
+  <div class="col-md-3 col-lg-2 me-0 px-3 py-1" href="#"><img width="120px" src="" /></div>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">
+              <span data-feather="home"></span>
+              Application Overview
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/filter_iframe.html">
+              <span data-feather="alert-circle"></span>
+              Insights
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/custom_embed.html">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a style="color: #3499CD;" class="nav-link active" href="/custom_embed.html">
+              <span data-feather="file-text"></span>
+              Custom View
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Customize Dashboard</h1>
+        <a href="#" onclick="toggler('widget1');">Add / Remove Bar Chart</a>
+        <a href="#" onclick="toggler('widget2');">Add / Remove Sales Over Time</a>
+        <a href="#" onclick="toggler('widget3');">Add / Remove Sales By Region</a>
+      </div>
+      <div>
+          <div id="sisenseApp">
+            <div class="row">
+                <div class="col" id="widget1"></div>
+                <div class="col" id="widget2"></div>
+                <div class="col" id="widget3"></div>
+            </div>
+            <div class="row">
+                <div class="col-6" id="widget4"></div>
+                <div class="col-6" id="widget5"></div>
+            </div>
+            <div class="row">
+              <div class="col" id="widget6"></div>
+            </div>
+          </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+    <!-- replace with your Sisense server address -->
+    <script type="text/javascript" src=".sisensepoc.com/js/sisense.js"></script> <!-- replace with your Sisense server address -->
+    <script type = "text/javascript">
+
+      function toggler(divId) {
+        $("#" + divId).toggleClass('d-none');
+      }
+
+      // replace with your Sisense server address
+      Sisense.connect('.sisensepoc.com')
+        .then(function(app) { 
+          // replace with your dashboard id
+          app.dashboards.load('DASHBOARD ID')
+            .then(function(dash){ 
+            
+               // replace with your widgets' id
+               // and make this for each of your widgets
+               const widgets = [
+                   {id: 'WIDGET_ID', containerId: 'widget1'},
+                   {id: 'WIDGET_ID', containerId: 'widget2'},
+                   {id: 'WIDGET_ID', containerId: 'widget3'},
+                    ];
+               widgets.forEach((w) => {
+                 dash.widgets.get(w.id).container = document.getElementById(w.containerId);
+               });
+           
+               // refresh your dashboard   
+               dash.refresh();
+            });
+      });
+    </script>
+  </body>
+</html>
